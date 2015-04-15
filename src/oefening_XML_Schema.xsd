@@ -20,9 +20,10 @@ curriculum en 1 onderwerp. De beroepencode bestaat steeds uit 6 cijfers.
     
     <xs:complexType name="onderwerpType">
         <xs:simpleContent>
-            <xs:extension base="xs:string"/>
+            <xs:extension base="xs:string">
+                <xs:attribute name="nr" type="xs:nonNegativeInteger"/>
+            </xs:extension>
         </xs:simpleContent>
-        <xs:attribute name="nr" type="xs:nonNegativeInteger"/>
     </xs:complexType>
  
     <xs:complexType name="curriculumType">
@@ -33,19 +34,19 @@ curriculum en 1 onderwerp. De beroepencode bestaat steeds uit 6 cijfers.
         <xs:attribute name="nr" type="xs:nonNegativeInteger"/>
     </xs:complexType>
     
-    <xs:complexType name="curriculumsType" mixed="true">
+    <xs:complexType name="curriculumsType">
         <xs:sequence minOccurs="1" maxOccurs="unbounded">
             <xs:element name="Curriculum" type="curriculumType"/>
         </xs:sequence>
     </xs:complexType>
     
-    <xs:complexType name="onderwerpenType" mixed="true">
+    <xs:complexType name="onderwerpenType">
         <xs:sequence minOccurs="1" maxOccurs="unbounded">
             <xs:element name="Onderwerp" type="onderwerpType"/>
         </xs:sequence>
     </xs:complexType>
     
-    <xs:complexType name="boekType">
+    <xs:complexType name="boekType" mixed="true">
         <xs:sequence>
             <xs:element name="Titel" type="xs:string" />
             <xs:element name="Schrijver" type="xs:string"/>.
