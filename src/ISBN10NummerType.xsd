@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:simpleType name="ISBN10nrType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{9}[a-zA-Z0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="ISBN" type="ISBN10nrType"/>
+</xs:schema>

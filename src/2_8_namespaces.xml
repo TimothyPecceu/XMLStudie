@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Boeken xmlns="http://www.vdab.be/XML" xmlns:persoon="http://www.online.be/books">
+  <Boek>
+    <Titel>Mijn ruimtereis</Titel>
+		<persoon:auteur>
+			<persoon:titel>baron</persoon:titel>
+			<persoon:voornaam>Dirk</persoon:voornaam>
+			<persoon:naam>Frimout</persoon:naam>
+		</persoon:auteur>
+    <Uitgever>Apress</Uitgever>
+    <Curriculums>
+      <Curriculum>
+        <Naam>
+            .NET ontwikkelaar met C#
+        </Naam>
+        <Beroepencode>750412</Beroepencode>
+      </Curriculum>
+    </Curriculums>
+    <Onderwerpen>
+      <Onderwerp>C#</Onderwerp>
+    </Onderwerpen>
+  </Boek>
+</Boeken>
+

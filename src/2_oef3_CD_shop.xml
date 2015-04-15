@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDs>
+    <CD>
+        <Titel>Love Tattoo</Titel>
+        <Artiest>Imelda May</Artiest>
+        <Jaar>2007</Jaar>
+        <Tracks>
+            <Track>Johnny Got a Boom Boom</Track>
+            <Track>Feel Me</Track>
+            <Track>Love Tattoo</Track>
+        </Tracks>
+    </CD>
+    <CD>
+        <Titel>The House That Dirt Built</Titel>
+        <Artiest>The Heavy</Artiest>
+        <Jaar>2009</Jaar>
+        <Tracks>
+            <Track>The House That Dirt Built</Track>
+            <Track>How You Like Me Now?</Track>
+            <Track>Short Change Hero</Track>
+        </Tracks>
+    </CD>
+</CDs>
