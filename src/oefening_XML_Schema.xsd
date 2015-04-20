@@ -11,13 +11,13 @@ curriculum en 1 onderwerp. De beroepencode bestaat steeds uit 6 cijfers.
     
     <xs:simpleType name="beroepenCodeType">
         <xs:restriction base="xs:nonNegativeInteger">
-            <xs:pattern value="[0-9]{6}"/>
+            <xs:pattern value="\d{6}"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="ISBNnrType">
         <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]{9}[a-zA-Z0-9]"/>
+            <xs:pattern value="\d{9}[a-zA-Z0-9]"/>
         </xs:restriction>
     </xs:simpleType>
     
