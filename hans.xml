@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<ns1:Boeken
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns:ns1='http://www.vdab.be/XML_IMPORT'
+    xsi:schemaLocation='http://www.vdab.be/XML_IMPORT src/oefening_XML_Schema.xsd'>
+    <ns1:Boek boeknr="" isbn="">
+        <ns1:Titel></ns1:Titel>
+        <ns1:Schrijver></ns1:Schrijver>
+        <ns1:Uitgever></ns1:Uitgever>
+        <ns1:Curriculums>
+            <ns1:Curriculum nr="">
+                <ns1:Naam></ns1:Naam>
+                <ns1:Beroepencode></ns1:Beroepencode>
+            </ns1:Curriculum>
+        </ns1:Curriculums>
+        <ns1:Onderwerpen></ns1:Onderwerpen>
+    </ns1:Boek>
+
+</ns1:Boeken>

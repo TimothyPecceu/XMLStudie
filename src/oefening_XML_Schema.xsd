@@ -3,12 +3,15 @@ Er kunnen ook geen boeken aanwezig zijn in de lijst. Elk boek heeft minimaal 1
 curriculum en 1 onderwerp. De beroepencode bestaat steeds uit 6 cijfers.
 -->
 <xs:schema version="1.0"
+           xmlns = "http://www.vdab.be/XML_IMPORT"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           elementFormDefault="qualified">
+           elementFormDefault="qualified"
+            targetNamespace="http://www.vdab.be/XML_IMPORT"
+            >
     
     <xs:simpleType name="beroepenCodeType">
         <xs:restriction base="xs:nonNegativeInteger">
-            <xs:pattern value="/d{6}"/>
+            <xs:pattern value="[0-9]{6}"/>
         </xs:restriction>
     </xs:simpleType>
     
@@ -49,10 +52,10 @@ curriculum en 1 onderwerp. De beroepencode bestaat steeds uit 6 cijfers.
     <xs:complexType name="boekType" mixed="true">
         <xs:sequence>
             <xs:element name="Titel" type="xs:string" />
-            <xs:element name="Schrijver" type="xs:string"/>.
+            <xs:element name="Schrijver" type="xs:string"/>
             <xs:element name="Uitgever" type="xs:string"/>
             <xs:element name="Curriculums" type="curriculumsType"/>
-            <xs:element name="Onderwerpen" type="OnderwerpenType"/> 
+            <xs:element name="Onderwerpen" type="onderwerpenType"/> 
         </xs:sequence>
         <xs:attribute name="boeknr" type="xs:nonNegativeInteger"/>
         <xs:attribute name="isbn" type="ISBNnrType"/>

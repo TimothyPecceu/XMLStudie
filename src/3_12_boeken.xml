@@ -1,4 +1,9 @@
-<Boeken>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Boeken xmlns="http://www.vdab.be/XML_IMPORT"
+       xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xsi:schemaLocation="http://www.vdab.be/XML_IMPORT oefening_XML_Schema.xsd">
+    
 	<Boek boeknr="405" isbn="1590590104">
 		<Titel>Database Programming with C#</Titel>
 		<Schrijver>Thomsen</Schrijver>
