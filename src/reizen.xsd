@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+
+<xs:schema version="1.0"
+           xmlns = "http://www.vdab.be/XML_IMPORT"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://www.vdab.be/XML_IMPORT">
+
+    <xs:simpleType name="valutaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="EUR"/>
+            <xs:enumeration value="USD"/>
+            <xs:enumeration value="GBP"/>
+            <xs:enumeration value="JPY"/>
+            <xs:enumeration value="ZAR"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="beeldType">
+        <xs:attribute name="source" type="xs:string" use="required"/>
+        <xs:attribute name="hoogte" type="xs:nonNegativeInteger" use="required"/>
+        <xs:attribute name="breedte" type="xs:nonNegativeInteger" use="required"/>
+        <xs:attribute name="alt" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="dagType">
+        <xs:sequence>
+            <xs:element name="titel" type="xs:string"/>
+            <xs:element name="beschrijving" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="dagnr" type="xs:nonNegativeInteger" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="programmaType">
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="dag" type="dagType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="datumsType">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="datum" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="adressenType">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="webadres" type="xs:anyURI"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="prijsType">
+        <xs:sequence>
+            <xs:element name="bedrag" type="xs:nonNegativeInteger"/>
+            <xs:element name="vluchtInbegrepen" type="xs:boolean"/>
+            <xs:element name="Begeleid" type="xs:boolean"/>
+        </xs:sequence>
+        <xs:attribute name="valutaEenheid" type="valutaType"/>
+    </xs:complexType>
+    
+    <xs:complexType name="reisType" mixed="true">
+        <xs:sequence>
+            <xs:element name="reistitel" type="xs:string"/>
+            <xs:element name="beschrijving" type="xs:string"/>
+            <xs:element name="tijdsduur" type="xs:string"/>
+            <xs:element name="prijs" type="prijsType"/>
+            <xs:element name="opmerkingen" type="xs:string" minOccurs="0"/>
+            <xs:element name="dagprogramma" type="programmaType"/>
+            <xs:element name="vertrekdata" type="datumsType" minOccurs="0"/>
+            <xs:element name="webadressen" type="adressenType" minOccurs="0"/>
+            <xs:element name="beeld" type="beeldType"/>
+        </xs:sequence>
+        <xs:attribute name="boekingsnr" type="xs:nonNegativeInteger"/>
+    </xs:complexType>
+    
+    <xs:complexType name="reizenType">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="reis" type="reisType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="reizen" type="reizenType">
+        <xs:unique name="reisKey">
+            <xs:selector xpath=".//reis"/>
+            <xs:field xpath="@boekingsnr"/>
+        </xs:unique>
+    </xs:element>
+</xs:schema>
